@@ -1,8 +1,6 @@
-import {
-    Component
-} from "../modules/Component";
+import Component from "../modules/Component";
 
-export class HeaderComponent extends Component {
+export default class HeaderComponent extends Component {
     constructor(id) {
         super(id);
     }
