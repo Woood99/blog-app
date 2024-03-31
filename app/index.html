@@ -5,75 +5,66 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="theme-color" content="#111111" />
-		<title>Страницы</title>
+		<title>Главная</title>
 		<!-- <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin> -->
 		<link rel="stylesheet" href="css/vendor.css" />
 		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/index.css" />
 		<script defer src="js/global.js"></script>
 		<script defer src="js/index.js"></script>
-		<style>
-			.page__body {
-				padding: 20px 15px;
-			}
-
-			.site-container {
-				overflow: visible;
-			}
-
-			.block:not(:last-child) {
-				margin-bottom: 50px;
-			}
-
-			h2 {
-				font-size: 25px;
-				line-height: 100%;
-				font-weight: 500;
-			}
-
-			ol {
-				margin-top: 15px !important;
-			}
-
-			ol li:not(:last-child) {
-				margin-bottom: 8px;
-			}
-
-			a {
-				font-size: 15px;
-				line-height: 100%;
-				font-weight: 400;
-				transition: all 0.3s ease-in-out;
-			}
-
-			a:hover {
-				color: red;
-			}
-		</style>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/solid.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css" />
+		<link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css" />
 	</head>
 
-	<body class="page__body">
-		<div class="site-container">
-			<div class="block">
-				<h2>Готовые страницы:</h2>
-				<ol>
-					<li>
-						...
-					</li>
-				</ol>
+	<body>
+		<header id="header">
+			<h1 class="title">БЛОГ 001001</h1>
+			<h2 class="subtitle">Создавайте статьи и добавляйте их в избранное</h2>
+			<button class="get-started button button-primary button-large js-header-start">Приступить</button>
+		</header>
+
+		<section class="container w-container">
+			<ul class="tabs" id="navigation">
+				<li><a class="tab " href="#" data-name="posts">Посты</a></li>
+				<li><a class="tab active" href="#" data-name="create">Создать</a></li>
+				<li><a class="tab" href="#" data-name="favorite">Избранное</a></li>
+			</ul>
+
+			<div class="loader-wrap hide" id="loader">
+				<div class="lds-ripple">
+					<div></div>
+					<div></div>
+				</div>
 			</div>
-			<div class="block">
-				<h2>В разработке:</h2>
-				<ol>
-					<li></li>
-				</ol>
-			</div>
-			<div class="block">
-				<h2>Ui-Kit</h2>
-				<ol>
-					<li></li>
-				</ol>
-			</div>
-		</div>
+
+			<form id="create">
+				<h1 class="h4">Создать новый пост</h1>
+
+				<div class="form-control">
+					<label>Название</label>
+					<input type="text" name="title" placeholder="Введите название" />
+				</div>
+
+				<div class="form-control">
+					<label>Текст</label>
+					<textarea name="fulltext" placeholder="Введите текст поста"></textarea>
+				</div>
+
+				<div class="form-control">
+					<label>Тип</label>
+					<select name="type">
+						<option value="note" selected>Заметка</option>
+						<option value="news">Новость</option>
+					</select>
+				</div>
+
+				<button class="button-primary button-round button-shadow" type="submit">Создать</button>
+			</form>
+			<div id="posts" class="hide"></div>
+			<div id="favorite" class="hide"></div>
+		</section>
 	</body>
 </html>

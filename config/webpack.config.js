@@ -3,7 +3,7 @@ function config(mode) {
 		mode: mode,
 		entry: {
 			global: './src/js/global.js',
-			home: './src/js/pages/home.js'
+			index: './src/js/index.js'
 		},
 		output: {
 			filename: '[name].js',

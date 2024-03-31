@@ -32,6 +32,5 @@ async function submitHandler(e) {
 
         this.form.clear();
 
-        console.log('Запись создана в базе данных');
     }
 }
